@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intel Q3 2025 Financial Report - Comprehensive Analysis</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #0071c5 0%, #003d82 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 50px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 4px solid #0071c5;
+        }
+        
+        .company-logo {
+            font-size: 3em;
+            color: #0071c5;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+        
+        h1 {
+            color: #2d3748;
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            color: #718096;
+            font-size: 1.2em;
+            margin-bottom: 8px;
+        }
+        
+        .date-info {
+            color: #a0aec0;
+            font-size: 1em;
+        }
+        
+        .highlight-banner {
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 20px rgba(72, 187, 120, 0.3);
+        }
+        
+        .highlight-banner h2 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+        
+        .highlight-banner p {
+            font-size: 1.1em;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+        
+        .metric-card {
+            background: linear-gradient(135deg, #0071c5 0%, #003d82 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 113, 197, 0.4);
+            transition: transform 0.3s ease;
+        }
+        
+        .metric-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .metric-card.positive {
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+        }
+        
+        .metric-card.warning {
+            background: linear-gradient(135deg, #ed8936 0%, #dd6b20 100%);
+        }
+        
+        .metric-label {
+            font-size: 0.85em;
+            opacity: 0.9;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+        }
+        
+        .metric-value {
+            font-size: 2.5em;
+            font-weight: 800;
+            margin-bottom: 8px;
+            line-height: 1;
+        }
+        
+        .metric-change {
+            font-size: 0.95em;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+        
+        .section {
+            margin-bottom: 60px;
+            background: #f7fafc;
+            padding: 40px;
+            border-radius: 20px;
+        }
+        
+        .section h2 {
+            color: #2d3748;
+            margin-bottom: 30px;
+            font-size: 2em;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #0071c5;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section-icon {
+            margin-right: 15px;
+            font-size: 1.2em;
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 450px;
+            margin-bottom: 30px;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .chart-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+            gap: 30px;
+        }
+        
+        .insight-box {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid #0071c5;
+            margin-top: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .insight-box h3 {
+            color: #0071c5;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            font-weight: 700;
+        }
+        
+        .insight-box ul {
+            list-style-position: inside;
+            color: #4a5568;
+            line-height: 2;
+        }
+        
+        .insight-box li {
+            margin-bottom: 8px;
+            padding-left: 10px;
+        }
+        
+        .insight-box strong {
+            color: #2d3748;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 25px;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .comparison-table th {
+            background: #0071c5;
+            color: white;
+            padding: 18px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 1.05em;
+        }
+        
+        .comparison-table td {
+            padding: 15px 18px;
+            border-bottom: 1px solid #e2e8f0;
+            color: #4a5568;
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .comparison-table tr:hover {
+            background: #f7fafc;
+        }
+        
+        .positive-value {
+            color: #38a169;
+            font-weight: 600;
+        }
+        
+        .negative-value {
+            color: #e53e3e;
+            font-weight: 600;
+        }
+        
+        .key-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .highlight-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border-top: 4px solid #0071c5;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .highlight-card h4 {
+            color: #2d3748;
+            margin-bottom: 12px;
+            font-size: 1.1em;
+        }
+        
+        .highlight-card p {
+            color: #718096;
+            line-height: 1.7;
+            font-size: 0.95em;
+        }
+        
+        .highlight-card.green {
+            border-top-color: #48bb78;
+        }
+        
+        .highlight-card.orange {
+            border-top-color: #ed8936;
+        }
+        
+        .highlight-card.red {
+            border-top-color: #f56565;
+        }
+        
+        .investment-thesis {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin-top: 50px;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+        
+        .investment-thesis h2 {
+            color: white;
+            border-bottom-color: rgba(255,255,255,0.3);
+            margin-bottom: 30px;
+        }
+        
+        .thesis-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 25px;
+        }
+        
+        .thesis-column h3 {
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .thesis-column ul {
+            list-style-position: inside;
+            line-height: 2;
+        }
+        
+        .thesis-column li {
+            margin-bottom: 10px;
+            opacity: 0.95;
+        }
+        
+        footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 3px solid #e2e8f0;
+            text-align: center;
+            color: #718096;
+        }
+        
+        footer p {
+            margin-bottom: 8px;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 30px;
+            }
+            
+            .chart-container {
+                height: 350px;
+                page-break-inside: avoid;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .thesis-columns {
+                grid-template-columns: 1fr;
+            }
+            
+            .chart-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="company-logo">INTEL</div>
+            <h1>Q3 2025 Financial Report</h1>
+            <div class="subtitle">Comprehensive Earnings Analysis & Strategic Review</div>
+            <div class="date-info">Quarter Ended: 28 September 2025 | Reported: 23 October 2025</div>
+        </header>
+        
+        <div class="highlight-banner">
+            <h2>🎯 Fourth Consecutive Quarter of Improved Execution</h2>
+            <p>Intel delivered Q3 revenue of $13.7B (+3% YoY), non-GAAP EPS of $0.23 (vs -$0.46 prior year), and secured approximately $20B in strategic capital from the U.S. Government, NVIDIA, and SoftBank. The turnaround gains momentum.</p>
+        </div>
+        
+        <div class="metrics-grid">
+            <div class="metric-card positive">
+                <div class="metric-label">Revenue</div>
+                <div class="metric-value">$13.7B</div>
+                <div class="metric-change">+3% YoY | Beat by $560M</div>
+            </div>
+            
+            <div class="metric-card positive">
+                <div class="metric-label">Non-GAAP EPS</div>
+                <div class="metric-value">$0.23</div>
+                <div class="metric-change">vs -$0.46 prior year | +1,050% beat</div>
+            </div>
+            
+            <div class="metric-card positive">
+                <div class="metric-label">Net Income</div>
+                <div class="metric-value">$4.1B</div>
+                <div class="metric-change">vs -$16.6B loss Q3 2024</div>
+            </div>
+            
+            <div class="metric-card positive">
+                <div class="metric-label">Operating Margin</div>
+                <div class="metric-value">5.0%</div>
+                <div class="metric-change">vs -68.2% prior year</div>
+            </div>
+            
+            <div class="metric-card positive">
+                <div class="metric-label">Cash from Operations</div>
+                <div class="metric-value">$2.5B</div>
+                <div class="metric-change">Strong operational cash generation</div>
+            </div>
+            
+            <div class="metric-card positive">
+                <div class="metric-label">Cash & Investments</div>
+                <div class="metric-value">$30.9B</div>
+                <div class="metric-change">Enhanced by strategic funding</div>
+            </div>
+            
+            <div class="metric-card">
+                <div class="metric-label">Gross Margin</div>
+                <div class="metric-value">40%</div>
+                <div class="metric-change">+4pp above guidance</div>
+            </div>
+            
+            <div class="metric-card">
+                <div class="metric-label">YTD Stock Performance</div>
+                <div class="metric-value">+87%</div>
+                <div class="metric-change">From ~$20 to $37.35</div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2><span class="section-icon">📊</span>Revenue & Profitability Trajectory</h2>
+            <div class="chart-container">
+                <canvas id="revenueChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="profitabilityChart"></canvas>
+            </div>
+            <div class="insight-box">
+                <h3>Turnaround Momentum Building</h3>
+                <ul>
+                    <li><strong>Revenue Stabilisation:</strong> Q3 marks first positive YoY growth after quarters of contraction</li>
+                    <li><strong>Profitability Recovery:</strong> From -$16.6B loss to +$4.1B profit in one year demonstrates dramatic turnaround</li>
+                    <li><strong>Sequential Growth:</strong> Revenue up 6% from Q2 2025, showing momentum acceleration</li>
+                    <li><strong>Margin Expansion:</strong> Gross margin of 40% exceeded guidance by 4 percentage points</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2><span class="section-icon">🏢</span>Business Segment Performance</h2>
+            <div class="chart-grid">
+                <div class="chart-container">
+                    <canvas id="segmentRevenueChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <canvas id="segmentGrowthChart"></canvas>
+                </div>
+            </div>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Segment</th>
+                        <th>Q3 2025 Revenue</th>
+                        <th>QoQ Growth</th>
+                        <th>Key Highlights</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Client Computing Group (CCG)</strong></td>
+                        <td>$8.5B</td>
+                        <td class="positive-value">+8% QoQ</td>
+                        <td>Windows 11 refresh, Lunar Lake & Arrow Lake ramp</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Data Centre & AI (DCAI)</strong></td>
+                        <td>$3.3B</td>
+                        <td class="negative-value">-5% QoQ</td>
+                        <td>Hyperscale variability, offset by AI server CPUs</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Intel Foundry</strong></td>
+                        <td>$4.2B</td>
+                        <td class="negative-value">-2% YoY</td>
+                        <td>100% internal revenue; 18A ramping in Arizona</td>
+                    </tr>
+                    <tr>
+                        <td><strong>All Other</strong></td>
+                        <td>$1.1B</td>
+                        <td class="positive-value">+12% QoQ</td>
+                        <td>Operating profit: $69M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Intel Products Total</strong></td>
+                        <td>$12.7B</td>
+                        <td class="positive-value">+7% QoQ</td>
+                        <td>Strong execution across client & server</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="insight-box">
+                <h3>Segment Analysis</h3>
+                <ul>
+                    <li><strong>CCG Resurgence:</strong> PC refresh cycle driving demand; AI-enhanced processors (Lunar Lake, Arrow Lake) gaining traction</li>
+                    <li><strong>DCAI Challenges:</strong> Short-term hyperscale demand variability, but strong positioning in AI server CPUs</li>
+                    <li><strong>Foundry Transition:</strong> Critical 18A node production underway in Arizona Fab 52; awaiting external customer revenue</li>
+                    <li><strong>Supply Constraints:</strong> Current demand outpacing supply, expected to persist into 2026</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2><span class="section-icon">💰</span>Strategic Capital & Balance Sheet Strengthening</h2>
+            <div class="chart-container">
+                <canvas id="capitalChart"></canvas>
+            </div>
+            
+            <div class="key-highlights">
+                <div class="highlight-card green">
+                    <h4>U.S. Government Investment</h4>
+                    <p><strong>$5.7B received in Q3</strong> (part of $8.9B total agreement). Represents 9.9% government stake. Demonstrates strategic national importance of Intel's manufacturing capabilities.</p>
+                </div>
+                
+                <div class="highlight-card green">
+                    <h4>NVIDIA Partnership</h4>
+                    <p><strong>$5B investment</strong> expected to close by end of Q4 2025. Validates Intel's foundry capabilities and AI ecosystem positioning. Collaborative development of custom solutions.</p>
+                </div>
+                
+                <div class="highlight-card green">
+                    <h4>SoftBank Investment</h4>
+                    <p><strong>$2B received in Q3</strong>. Adds credibility to Intel's turnaround story and provides additional operational flexibility for strategic initiatives.</p>
+                </div>
+                
+                <div class="highlight-card green">
+                    <h4>Altera Divestiture</h4>
+                    <p><strong>$4.3B from 51% stake sale</strong> to Silver Lake. Streamlines portfolio and generates capital for core x86 and foundry investments.</p>
+                </div>
+                
+                <div class="highlight-card green">
+                    <h4>Mobileye Monetisation</h4>
+                    <p><strong>$900M from stake sale</strong>. Partial monetisation while retaining strategic position in autonomous driving market.</p>
+                </div>
+                
+                <div class="highlight-card">
+                    <h4>Debt Reduction</h4>
+                    <p><strong>$4.3B debt repaid in Q3</strong>. Deleveraging remains priority with maturities to be paid as due in 2026, improving financial health.</p>
+                </div>
+            </div>
+            
+            <div class="insight-box">
+                <h3>Financial Position Summary</h3>
+                <ul>
+                    <li><strong>Total Capital Secured:</strong> Approximately $20B through strategic partnerships and divestitures in 2025</li>
+                    <li><strong>Cash Position:</strong> $30.9B in cash and short-term investments (vs $11.1B in cash equivalents alone)</li>
+                    <li><strong>Operational Flexibility:</strong> Strengthened balance sheet enables continued R&D and manufacturing investments</li>
+                    <li><strong>Strategic Validation:</strong> Investments from NVIDIA and U.S. Government demonstrate critical ecosystem role</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2><span class="section-icon">⚙️</span>Operational Transformation under CEO Lip-Bu Tan</h2>
+            <div class="chart-grid">
+                <div class="chart-container">
+                    <canvas id="employeeChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <canvas id="opexChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="key-highlights">
+                <div class="highlight-card green">
+                    <h4>Workforce Optimisation</h4>
+                    <p>Reduced from 124,100 to 88,400 employees (-28.8%). Streamlined organisation, eliminated inefficiencies, retained top talent. Target: 75,000 by year-end.</p>
+                </div>
+                
+                <div class="highlight-card green">
+                    <h4>Operating Expense Control</h4>
+                    <p>OpEx down 59.5% from $11.1B to $4.5B. Demonstrates disciplined cost management whilst maintaining R&D investments in critical areas.</p>
+                </div>
+                
+                <div class="highlight-card green">
+                    <h4>CapEx Discipline</h4>
+                    <p>2025 gross CapEx expected at ~$18B (down from initial guidance). Net CapEx $8-11B. Cancelled Germany and Poland foundry projects; slowed Ohio construction.</p>
+                </div>
+                
+                <div class="highlight-card green">
+                    <h4>Portfolio Streamlining</h4>
+                    <p>Exited Altera (51% sold), partial Mobileye monetisation. Focus shifted to core x86 platforms, AI accelerators, and foundry services.</p>
+                </div>
+            </div>
+            
+            <div class="insight-box">
+                <h3>Transformation Strategy</h3>
+                <ul>
+                    <li><strong>Organisational Restructuring:</strong> Reduced management layers to accelerate decision-making</li>
+                    <li><strong>Return-to-Office:</strong> Implemented 4-day office mandate to boost collaboration and productivity</li>
+                    <li><strong>Foundry Discipline:</strong> Growth capacity only with committed volume; deploy CapEx lockstep with tangible milestones</li>
+                    <li><strong>Cost Target:</strong> Operating expenses targeted at $17B (2025) and $16B (2026)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2><span class="section-icon">🏭</span>Intel Foundry: The Critical Pivot</h2>
+            <div class="chart-container">
+                <canvas id="foundryChart"></canvas>
+            </div>
+            
+            <div class="key-highlights">
+                <div class="highlight-card orange">
+                    <h4>Current Status: Internal Only</h4>
+                    <p><strong>$4.2B Q3 revenue, 100% from Intel</strong>. No external customer revenue yet. This remains the biggest question mark for long-term viability.</p>
+                </div>
+                
+                <div class="highlight-card green">
+                    <h4>18A Node Progress</h4>
+                    <p><strong>Fab 52 in Arizona fully operational</strong>. Panther Lake scheduled for market launch in 2025. Yields progressing predictably. Foundation for next 3 generations.</p>
+                </div>
+                
+                <div class="highlight-card green">
+                    <h4>Advanced Packaging</h4>
+                    <p><strong>EMIB and EMIB-T differentiation</strong>. Strong progress in packaging services creating competitive advantage. Growing customer interest.</p>
+                </div>
+                
+                <div class="highlight-card orange">
+                    <h4>External Customer Pipeline</h4>
+                    <p><strong>Active engagement, no announced wins</strong>. Microsoft rumoured for AI chip manufacturing. U.S. Government secure enclave work committed.</p>
+                </div>
+                
+                <div class="highlight-card">
+                    <h4>14A Next Generation</h4>
+                    <p><strong>Designed as foundry-first node</strong>. Ground-up approach to meet customer requirements. Addresses broader market segments beyond internal needs.</p>
+                </div>
+                
+                <div class="highlight-card red">
+                    <h4>Capital Requirements</h4>
+                    <p><strong>$100B total investment needed</strong>. Long-term commitment requiring sustained customer wins and government support to justify.</p>
+                </div>
+            </div>
+            
+            <div class="insight-box">
+                <h3>Foundry Strategy & Outlook</h3>
+                <ul>
+                    <li><strong>Competitive Positioning:</strong> U.S.-based leading-edge manufacturing unique advantage vs TSMC geographic concentration</li>
+                    <li><strong>AI Infrastructure Demand:</strong> Unprecedented capacity needs for AI creating opportunities for multiple suppliers</li>
+                    <li><strong>Strategic Partnerships:</strong> NVIDIA, Microsoft, and U.S. Government engagement signals potential customer traction</li>
+                    <li><strong>Risk Factor:</strong> Foundry business still unproven; zero external revenue raises execution concerns</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2><span class="section-icon">📈</span>Q4 2025 Guidance & 2026 Outlook</h2>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Q4 2025 Guidance</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Revenue</strong></td>
+                        <td>$12.8B - $13.8B (midpoint: $13.3B)</td>
+                        <td>Roughly flat QoQ (excluding Altera)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>GAAP EPS</strong></td>
+                        <td>-$0.14</td>
+                        <td>Expected loss on GAAP basis</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Non-GAAP EPS</strong></td>
+                        <td>$0.08</td>
+                        <td>Continued adjusted profitability</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Gross Margin</strong></td>
+                        <td>~36.5%</td>
+                        <td>At midpoint of revenue range</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="insight-box">
+                <h3>Forward-Looking Drivers</h3>
+                <ul>
+                    <li><strong>Supply-Demand Dynamics:</strong> "Current demand outpacing supply, expected to persist into 2026" - CFO David Zinsner</li>
+                    <li><strong>Intel Products:</strong> Modest sequential growth expected; CCG down modestly, DCAI up strongly as server prioritised over entry client</li>
+                    <li><strong>Foundry Revenue:</strong> Expected up on increased 18A revenue and external foundry (Altera de-consolidation accounting)</li>
+                    <li><strong>2026 CapEx:</strong> Lower gross and net CapEx expected due to improved construction-in-progress utilisation</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2><span class="section-icon">⚠️</span>Key Risks & Challenges</h2>
+            
+            <div class="key-highlights">
+                <div class="highlight-card red">
+                    <h4>Foundry Customer Risk</h4>
+                    <p>Zero external customer revenue. Requires major customer wins (Microsoft, Apple, others) to validate $100B investment thesis.</p>
+                </div>
+                
+                <div class="highlight-card red">
+                    <h4>AI Market Share Deficit</h4>
+                    <p>Trailing NVIDIA (90%+ AI chip share) and AMD. Gaudi 3 AI accelerator unproven at scale. Difficult to regain lost ground.</p>
+                </div>
+                
+                <div class="highlight-card red">
+                    <h4>Margin Recovery Uncertainty</h4>
+                    <p>5% operating margin still far below historic 55% levels. Path to sustainable high margins unclear given competitive dynamics.</p>
+                </div>
+                
+                <div class="highlight-card orange">
+                    <h4>Government Funding Accounting</h4>
+                    <p>$5.7B government stake accounting treatment pending SEC review. Results may be revised, creating uncertainty.</p>
+                </div>
+                
+                <div class="highlight-card orange">
+                    <h4>Execution Risk</h4>
+                    <p>18A node critical for turnaround. Any delays or yield issues would severely damage credibility with potential foundry customers.</p>
+                </div>
+                
+                <div class="highlight-card orange">
+                    <h4>Competitive Pressure</h4>
+                    <p>AMD gaining x86 server share, NVIDIA dominating AI, TSMC 30-year manufacturing lead. Fighting on multiple fronts.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="investment-thesis">
+            <h2><span class="section-icon">💼</span>Investment Thesis</h2>
+            
+            <div class="thesis-columns">
+                <div class="thesis-column">
+                    <h3>🚀 Bull Case</h3>
+                    <ul>
+                        <li><strong>Strategic Validation:</strong> $16B from U.S. Gov + NVIDIA + SoftBank demonstrates critical importance</li>
+                        <li><strong>Turnaround Evidence:</strong> Fourth consecutive quarter of improved execution; profitability returning</li>
+                        <li><strong>Manufacturing Leadership:</strong> Only U.S.-based leading-edge logic fab; national security premium</li>
+                        <li><strong>AI Infrastructure Boom:</strong> Unprecedented demand for wafer capacity benefits multiple suppliers</li>
+                        <li><strong>Cost Discipline:</strong> OpEx down 59.5%; streamlined organisation improving efficiency</li>
+                        <li><strong>18A Progress:</strong> Fab 52 operational; yields tracking; Panther Lake launching 2025</li>
+                        <li><strong>Valuation Recovery:</strong> If foundry gains external customers, could re-rate significantly</li>
+                    </ul>
+                </div>
+                
+                <div class="thesis-column">
+                    <h3>🐻 Bear Case</h3>
+                    <ul>
+                        <li><strong>Foundry Unproven:</strong> Zero external revenue after significant investment; business model unvalidated</li>
+                        <li><strong>Headline vs Reality:</strong> 87% rally driven by optimism, not fundamental transformation</li>
+                        <li><strong>Market Share Losses:</strong> Continuing to lose ground in core x86 server and AI accelerators</li>
+                        <li><strong>Margin Concerns:</strong> 5% operating margin vs 55% historically; path to recovery unclear</li>
+                        <li><strong>Capital Intensity:</strong> $100B foundry buildout strains resources; ROI uncertain</li>
+                        <li><strong>Competitive Moat Eroded:</strong> AMD, NVIDIA, TSMC all executing better in respective markets</li>
+                        <li><strong>2026 Profitability Target:</strong> Sustainable profitability still 1-2 years away; execution risk high</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="insight-box" style="margin-top: 30px; border-left-color: white; background: rgba(255,255,255,0.15);">
+                <h3 style="color: white;">Investment Recommendation: HOLD (Cautious)</h3>
+                <ul style="color: white;">
+                    <li><strong>Current Positioning:</strong> Not recommended for new positions given 87% YTD rally; limited margin of safety</li>
+                    <li><strong>Existing Holders:</strong> Hold and monitor Q4 results for foundry customer announcements</li>
+                    <li><strong>Entry Point:</strong> Consider $32-$35 range if consolidation occurs</li>
+                    <li><strong>Catalyst Watch:</strong> External foundry customer wins (Microsoft, Apple); 18A volume ramp; 2026 profitability guidance</li>
+                    <li><strong>Portfolio Fit:</strong> High-risk turnaround; not suitable as core holding; consider 5-10% speculative allocation maximum</li>
+                </ul>
+            </div>
+        </div>
+        
+        <footer>
+            <p><strong>Intel Corporation (NASDAQ: INTC)</strong></p>
+            <p><strong>Report Generated:</strong> 24 October 2025</p>
+            <p><strong>Data Sources:</strong> Intel Corporation Investor Relations, Q3 2025 Earnings Release, Earnings Call Transcript, SEC Filings</p>
+            <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.8;">This analysis is for informational purposes only and does not constitute financial advice. Please conduct your own due diligence and consult with a qualified financial adviser before making investment decisions.</p>
+        </footer>
+    </div>
+    
+    <script>
+        Chart.defaults.font.family = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif";
+        Chart.defaults.color = '#4a5568';
+        
+        // Revenue Trend Chart
+        const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+        new Chart(revenueCtx, {
+            type: 'line',
+            data: {
+                labels: ['Q1 2024', 'Q2 2024', 'Q3 2024', 'Q4 2024', 'Q1 2025', 'Q2 2025', 'Q3 2025', 'Q4 2025E'],
+                datasets: [{
+                    label: 'Revenue ($B)',
+                    data: [12.7, 12.8, 13.3, 13.5, 13.0, 12.9, 13.7, 13.3],
+                    borderColor: '#0071c5',
+                    backgroundColor: 'rgba(0, 113, 197, 0.1)',
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.4,
+                    pointRadius: 5,
+                    pointHoverRadius: 7
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    title: {
+                        display: true,
+                        text: 'Quarterly Revenue Trend (8 Quarters)',
+                        font: { size: 18, weight: 'bold' },
+                        color: '#2d3748'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        min: 12,
+                        max: 14.5,
+                        title: {
+                            display: true,
+                            text: 'Revenue ($ Billions)',
+                            font: { size: 14, weight: 'bold' }
+                        }
+                    }
+                }
+            }
+        });
+        
+        // Profitability Chart
+        const profitCtx = document.getElementById('profitabilityChart').getContext('2d');
+        new Chart(profitCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Q3 2024', 'Q4 2024', 'Q1 2025', 'Q2 2025', 'Q3 2025'],
+                datasets: [{
+                    label: 'Net Income ($B)',
+                    data: [-16.6, -0.5, -2.5, -2.9, 4.1],
+                    backgroundColor: [
+                        'rgba(239, 68, 68, 0.8)',
+                        'rgba(251, 146, 60, 0.8)',
+                        'rgba(251, 146, 60, 0.8)',
+                        'rgba(251, 146, 60, 0.8)',
+                        'rgba(72, 187, 120, 0.8)'
+                    ],
+                    borderColor: [
+                        'rgba(239, 68, 68, 1)',
+                        'rgba(251, 146, 60, 1)',
+                        'rgba(251, 146, 60, 1)',
+                        'rgba(251, 146, 60, 1)',
+                        'rgba(72, 187, 120, 1)'
+                    ],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    title: {
+                        display: true,
+                        text: 'Net Income Recovery - Return to Profitability',
+                        font: { size: 18, weight: 'bold' },
+                        color: '#2d3748'
+                    }
+                },
+                scales: {
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Net Income ($ Billions)',
+                            font: { size: 14, weight: 'bold' }
+                        }
+                    }
+                }
+            }
+        });
+        
+        // Segment Revenue Chart
+        const segmentRevenueCtx = document.getElementById('segmentRevenueChart').getContext('2d');
+        new Chart(segmentRevenueCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Client Computing (CCG)', 'Data Centre & AI (DCAI)', 'Intel Foundry', 'All Other'],
+                datasets: [{
+                    data: [8.5, 3.3, 4.2, 1.1],
+                    backgroundColor: [
+                        'rgba(0, 113, 197, 0.9)',
+                        'rgba(52, 152, 219, 0.9)',
+                        'rgba(72, 187, 120, 0.9)',
+                        'rgba(155, 89, 182, 0.9)'
+                    ],
+                    borderColor: 'white',
+                    borderWidth: 3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'bottom',
+                        labels: {
+                            padding: 15,
+                            font: { size: 12 }
+                        }
+                    },
+                    title: {
+                        display: true,
+                        text: 'Q3 2025 Revenue by Segment ($B)',
+                        font: { size: 18, weight: 'bold' },
+                        color: '#2d3748'
+                    }
+                }
+            }
+        });
+        
+        // Segment Growth Chart
+        const segmentGrowthCtx = document.getElementById('segmentGrowthChart').getContext('2d');
+        new Chart(segmentGrowthCtx, {
+            type: 'bar',
+            data: {
+                labels: ['CCG', 'DCAI', 'Foundry', 'All Other', 'Intel Products Total'],
+                datasets: [{
+                    label: 'Sequential Growth (%)',
+                    data: [8, -5, -5, 12, 7],
+                    backgroundColor: [
+                        'rgba(72, 187, 120, 0.8)',
+                        'rgba(239, 68, 68, 0.8)',
+                        'rgba(239, 68, 68, 0.8)',
+                        'rgba(72, 187, 120, 0.8)',
+                        'rgba(72, 187, 120, 0.8)'
+                    ],
+                    borderColor: [
+                        'rgba(72, 187, 120, 1)',
+                        'rgba(239, 68, 68, 1)',
+                        'rgba(239, 68, 68, 1)',
+                        'rgba(72, 187, 120, 1)',
+                        'rgba(72, 187, 120, 1)'
+                    ],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    title: {
+                        display: true,
+                        text: 'Q3 2025 Sequential Growth by Segment (%)',
+                        font: { size: 18, weight: 'bold' },
+                        color: '#2d3748'
+                    }
+                },
+                scales: {
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Quarter-over-Quarter Growth (%)',
+                            font: { size: 14, weight: 'bold' }
+                        }
+                    }
+                }
+            }
+        });
+        
+        // Capital Sources Chart
+        const capitalCtx = document.getElementById('capitalChart').getContext('2d');
+        new Chart(capitalCtx, {
+            type: 'bar',
+            data: {
+                labels: ['U.S. Government', 'NVIDIA (Expected Q4)', 'SoftBank', 'Altera Sale', 'Mobileye Sale'],
+                datasets: [{
+                    label: 'Strategic Capital ($B)',
+                    data: [5.7, 5.0, 2.0, 4.3, 0.9],
+                    backgroundColor: [
+                        'rgba(59, 130, 246, 0.8)',
+                        'rgba(16, 185, 129, 0.8)',
+                        'rgba(139, 92, 246, 0.8)',
+                        'rgba(245, 158, 11, 0.8)',
+                        'rgba(236, 72, 153, 0.8)'
+                    ],
+                    borderColor: [
+                        'rgba(59, 130, 246, 1)',
+                        'rgba(16, 185, 129, 1)',
+                        'rgba(139, 92, 246, 1)',
+                        'rgba(245, 158, 11, 1)',
+                        'rgba(236, 72, 153, 1)'
+                    ],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    title: {
+                        display: true,
+                        text: 'Strategic Capital Secured in 2025 (~$20B Total)',
+                        font: { size: 18, weight: 'bold' },
+                        color: '#2d3748'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Capital Amount ($ Billions)',
+                            font: { size: 14, weight: 'bold' }
+                        }
+                    }
+                }
+            }
+        });
+        
+        // Employee Reduction Chart
+        const employeeCtx = document.getElementById('employeeChart').getContext('2d');
+        new Chart(employeeCtx, {
+            type: 'line',
+            data: {
+                labels: ['Q3 2024', 'Q4 2024', 'Q1 2025', 'Q2 2025', 'Q3 2025', 'Target 2025'],
+                datasets: [{
+                    label: 'Employee Count (thousands)',
+                    data: [124.1, 115.0, 110.0, 95.0, 88.4, 75.0],
+                    borderColor: '#dc2626',
+                    backgroundColor: 'rgba(220, 38, 38, 0.1)',
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.4,
+                    pointRadius: 5,
+                    pointHoverRadius: 7
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    title: {
+                        display: true,
+                        text: 'Workforce Reduction: 124K → 88K (-28.8%)',
+                        font: { size: 18, weight: 'bold' },
+                        color: '#2d3748'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        min: 70,
+                        max: 130,
+                        title: {
+                            display: true,
+                            text: 'Employees (thousands)',
+                            font: { size: 14, weight: 'bold' }
+                        }
+                    }
+                }
+            }
+        });
+        
+        // OpEx Chart
+        const opexCtx = document.getElementById('opexChart').getContext('2d');
+        new Chart(opexCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Q3 2024', 'Q3 2025', '2025 Target', '2026 Target'],
+                datasets: [{
+                    label: 'Operating Expenses ($B)',
+                    data: [11.1, 4.5, 17.0, 16.0],
+                    backgroundColor: [
+                        'rgba(239, 68, 68, 0.8)',
+                        'rgba(72, 187, 120, 0.8)',
+                        'rgba(59, 130, 246, 0.6)',
+                        'rgba(59, 130, 246, 0.6)'
+                    ],
+                    borderColor: [
+                        'rgba(239, 68, 68, 1)',
+                        'rgba(72, 187, 120, 1)',
+                        'rgba(59, 130, 246, 1)',
+                        'rgba(59, 130, 246, 1)'
+                    ],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    title: {
+                        display: true,
+                        text: 'Operating Expense Reduction (-59.5% QoQ)',
+                        font: { size: 18, weight: 'bold' },
+                        color: '#2d3748'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Operating Expenses ($ Billions)',
+                            font: { size: 14, weight: 'bold' }
+                        }
+                    }
+                }
+            }
+        });
+        
+        // Foundry Chart
+        const foundryCtx = document.getElementById('foundryChart').getContext('2d');
+        new Chart(foundryCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Q1 2025', 'Q2 2025', 'Q3 2025'],
+                datasets: [{
+                    label: 'Internal Revenue',
+                    data: [4.4, 4.4, 4.2],
+                    backgroundColor: 'rgba(0, 113, 197, 0.8)',
+                    borderColor: 'rgba(0, 113, 197, 1)',
+                    borderWidth: 2
+                }, {
+                    label: 'External Revenue',
+                    data: [0, 0, 0],
+                    backgroundColor: 'rgba(239, 68, 68, 0.8)',
+                    borderColor: 'rgba(239, 68, 68, 1)',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top'
+                    },
+                    title: {
+                        display: true,
+                        text: 'Intel Foundry Revenue: Still 100% Internal ($B)',
+                        font: { size: 18, weight: 'bold' },
+                        color: '#2d3748'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        stacked: true,
+                        title: {
+                            display: true,
+                            text: 'Foundry Revenue ($ Billions)',
+                            font: { size: 14, weight: 'bold' }
+                        }
+                    },
+                    x: {
+                        stacked: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
